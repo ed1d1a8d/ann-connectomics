@@ -1,0 +1,19 @@
+# Python 3.10
+
+# Torch
+torch
+torchvision
+torchaudio
+
+# Other computational libraries
+matplotlib
+pandas
+
+# Utilities
+black
+flake8
+isort
+ipywidgets
+jupyterlab
+mypy
+tqdm
