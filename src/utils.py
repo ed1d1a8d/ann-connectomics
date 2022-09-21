@@ -31,3 +31,16 @@ def get_flat_children(model: torch.nn.Module) -> list[nn.Module]:
     for child in children:
         flat_children.extend(get_flat_children(child))
     return flat_children
+
+
+def get_flat_nodes(model: torch.nn.Module) -> list[nn.Module]:
+    """Adapted from https://stackoverflow.com/a/65112132/1337463."""
+    children = list(model.children())
+
+    if children == []:
+        return [model]
+
+    flat_nodes = [model]
+    for child in children:
+        flat_nodes.extend(get_flat_nodes(child))
+    return flat_nodes
