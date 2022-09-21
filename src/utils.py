@@ -15,6 +15,10 @@ def plot_loghist(vals, weights, bins: int):
     plt.xscale("log")
 
 
+def num_params(model: nn.Module) -> int:
+    return sum(p.numel() for p in model.parameters())
+
+
 def get_flat_children(model: torch.nn.Module) -> list[nn.Module]:
     """Adapted from https://stackoverflow.com/a/65112132/1337463."""
     children = list(model.children())
